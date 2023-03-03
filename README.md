@@ -2,10 +2,6 @@
 
 UserLog is a plugin for logging chat messages on your Minecraft server.
 
-## Problem
-
-The plugin currently has an issue with slowing down message sending, which needs to be fixed.
-
 ## Configuration
 
 UserLog has a configuration file `config.yml` with the following settings:
