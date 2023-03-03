@@ -14,7 +14,7 @@ import java.time.ZonedDateTime;
 
 public class main extends JavaPlugin implements Listener {
 	
-	public main plugin = this;
+	static main instance;
 	
     final String username = getConfig().getString("mysql.username");
     final String password = getConfig().getString("mysql.password");
@@ -34,9 +34,9 @@ public class main extends JavaPlugin implements Listener {
     
 	@Override
 	public void onEnable() {
+		instance = this;
 		this.getLogger().info("UserLog started!");
 		this.saveDefaultConfig();
-		plugin = this;
 		getServer().getPluginManager().registerEvents(this, this);
 	}
 	
@@ -85,6 +85,6 @@ public class main extends JavaPlugin implements Listener {
 	@Override
 	public void onDisable() {
 		this.getLogger().info("UserLog disabled! Goodbye!");
-		plugin = null;
+		instance = null;
 	}
 }
